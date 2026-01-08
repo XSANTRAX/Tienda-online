@@ -1,0 +1,8 @@
+footer.info {
+  position: fixed;
+  bottom: 0;      /* lo coloca en la parte inferior */
+  left: 0;        /* lo coloca en la esquina izquierda */
+  width: auto;    /* ajusta al contenido */
+  color: white;
+  padding: 1rem;
+}
