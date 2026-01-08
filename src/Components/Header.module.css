@@ -1,0 +1,50 @@
+.header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: lightslategray; 
+  padding: 16px 5%;
+}
+
+.logo {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  gap: 6rem;
+  margin-left: 40rem;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.active { 
+  font-weight: bold; 
+  color: rgb(131, 38, 38);
+  pointer-events: none; /* evita clics */ 
+}
+
+.navItem:hover {
+  color: #d0d0ff;
+  transform: scale(1.1); /* agranda el ítem */
+}
+
+.iconItem {
+  margin-bottom: 8px;
+  fill: rgb(196, 170, 170);
+}
+
+.iconActive { 
+  fill: rgb(214, 66, 66); /* ícono gris */ 
+}
