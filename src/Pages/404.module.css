@@ -1,0 +1,21 @@
+main.error {
+  max-width: 500px;        /* ancho fijo del recuadro */
+  margin: 4rem auto;       /* centrado horizontal y separación vertical */
+  padding: 2rem;           /* espacio interno */
+  background-color: #fff;  /* fondo blanco */
+  border: 1px solid #ddd;  /* borde gris claro */
+  border-radius: 8px;      /* esquinas redondeadas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra sutil */
+  text-align: center;      /* centra el contenido */
+}
+
+main.error h1 {
+  font-size: 1.8rem;
+  color: #d32f2f;          /* rojo para destacar el error */
+  margin-bottom: 1rem;
+}
+
+main.error p {
+  font-size: 1.1rem;
+  color: #555;
+}
