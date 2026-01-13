@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 
 const RESULTS_PER_PAGE = 6;
 
-export default function Home() {
+export default function Home({ carrito, setCarrito }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState(null);
@@ -34,6 +34,10 @@ export default function Home() {
     }
     fetchData();
   }, [category]);
+
+  const agregarProducto = (producto) => {
+    setCarrito([...carrito, producto]);
+  };
 
   const totalPages = Math.ceil(products.length / RESULTS_PER_PAGE);
 
@@ -80,21 +84,20 @@ export default function Home() {
                   key={product.id}
                   className={styles.cardLink}
                 >
-                  <div className={styles.card}>
-                    <div className={styles.cardContent}>
-                      <img src={product.image} alt={product.title} />
-                      <h3 className={styles.productTitle}>{product.title}</h3>
-                      <p>{`$${product.price}`}</p>
-                    </div>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault(); // evita que el botón active el link
-                        e.stopPropagation();
-                      }}
-                    >
-                      Agregar al carrito
-                    </button>
+                  <div className={styles.cardContent}>
+                    <img src={product.image} alt={product.title} />
+                    <h3 className={styles.productTitle}>{product.title}</h3>
+                    <p>{`$${product.price}`}</p>
                   </div>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault(); // evita que el botón active el link
+                      e.stopPropagation();
+                      agregarProducto(product);
+                    }}
+                  >
+                    Agregar al carrito
+                  </button>
                 </Link>
               ))}
             </div>
