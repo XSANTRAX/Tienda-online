@@ -1,0 +1,207 @@
+/* Layout principal en 3 columnas */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* izquierda, centro, derecha */
+  gap: 0; /* columnas pegadas */
+  width: 100%;
+  min-height: 100vh; 
+  background-color: inherit;
+  padding: 2rem;
+  align-items: start;
+}
+
+/* Secciones: ocupan todo el ancho y alto de su celda */
+section.intro,
+section.products,
+section.total {
+  margin: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+/* Botón volver */
+.back {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.back button {
+  background-color: aquamarine;
+  color: black;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4a5a6a;
+    color: white;
+    border-color: white;
+    transition: background-color 0.3s ease;
+  }
+}
+
+section.intro{
+  border-radius: 10px 0 0 10px;
+  box-shadow: inset 6px 0 16px rgba(0,0,0,0.15);
+}
+
+/* Intro */
+section.intro > div {
+  padding: 2rem;
+  text-align: center;
+}
+
+section.intro h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+section.intro p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Productos: lista en columna */
+.products > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardLink { 
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* contenido horizontal */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: inherit; 
+  padding: 1rem; 
+  min-height: 260px;
+  border-bottom: wheat 1px solid;
+}
+
+.cardLink:hover { 
+  transform: translateY(-1px); 
+  box-shadow: 
+  0 6px 16px rgba(0,0,0,0.15),   /* sombra inferior */
+  0 -6px 16px rgba(0,0,0,0.15);  /* sombra superior */ 
+  border-radius: 8px;
+  cursor: pointer; 
+}
+
+.cardImg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ alinea arriba */
+  align-items: center;
+}
+
+.products img {
+  width: 200px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.products h3 {
+  color: black;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.products p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  align-self: center;
+}
+
+.products button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.products button:hover {
+  background-color: #4a5a6a;
+}
+
+/* Total */
+.total {
+  border-radius: 0 10px 10px 0;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: inset -6px 0 16px rgba(0,0,0,0.15);
+}
+
+.total h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.total p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.total button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4a5a6a;
+    color: white;
+    border-color: white;
+    transition: background-color 0.3s ease;
+    transform: translateY(-1px);
+    box-shadow: 
+    0 6px 16px rgba(0,0,0,0.15),   /* sombra inferior */
+    0 -6px 16px rgba(0,0,0,0.15);  /* sombra superior */ 
+  }
+}
+
+/* Responsive: apilar en móviles */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  section.intro,
+  section.products,
+  section.total {
+    height: auto;
+  }
+
+  .products > div {
+    flex-direction: column;
+  }
+}
