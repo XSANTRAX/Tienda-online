@@ -1,8 +1,7 @@
 footer.info {
-  position: fixed;
-  bottom: 0;      /* lo coloca en la parte inferior */
-  left: 0;        /* lo coloca en la esquina izquierda */
-  width: auto;    /* ajusta al contenido */
-  color: white;
+  position: relative; /* ✅ ya no es fijo */
+  width: 100%;
+  color: rgb(0, 0, 0);
+  text-align: center;
   padding: 1rem;
 }
