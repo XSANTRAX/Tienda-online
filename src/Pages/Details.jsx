@@ -36,8 +36,8 @@ export default function Details() {
   }
   return (
     <>
-      <div className={styles.container}>
-        <main className={styles.product}>
+      <main className={styles.container}>
+        <div className={styles.product}>
           <button className={styles.back} onClick={() => window.history.back()}>
             Volver
           </button>
@@ -62,8 +62,8 @@ export default function Details() {
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 }
